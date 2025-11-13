@@ -65,11 +65,20 @@
         "key": "ctrl+x k",
         "command": "workbench.action.closeActiveEditor"
     },
-    // C-x k - Create terminal (close file)
+    
+    // C-x t - Create terminal editor
     {
         "key": "ctrl+x t",
-        "command": "workbench.action.createTerminalEditor",
+        "command": "workbench.action.createTerminalEditor"
     },
+    
+    // C-x Shift+Ctrl+t - Create terminal editor at current file location
+    {
+        "key": "ctrl+x shift+ctrl+t",
+        "command": "openInIntegratedTerminal",
+        "when": "editorTextFocus"
+    },
+    
     // C-x C-p - Copy file path (mnemonic: "Control-x Control-path")
     {
         "key": "ctrl+x ctrl+p",
@@ -246,14 +255,28 @@
     {
         "key": "ctrl+tab",
         "command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && !terminalFocus"
+    },
+    
+    // Quick open recent editors from terminal
+    {
+        "key": "ctrl+tab",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditor",
+        "when": "terminalFocus"
     },
     
     // Quick open recent editors (within current group)
     {
         "key": "ctrl+shift+tab",
         "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus && !terminalFocus"
+    },
+    
+    // Quick open recent editors from terminal (within group)
+    {
+        "key": "ctrl+shift+tab",
+        "command": "workbench.action.quickOpenLeastRecentlyUsedEditorInGroup",
+        "when": "terminalFocus"
     },
 
     // ========================================
@@ -451,7 +474,6 @@
         "key": "ctrl+alt+j",
         "command": "workbench.action.togglePanel"
     },
-    
     // Terminal scrolling
     {
         "key": "ctrl+up",

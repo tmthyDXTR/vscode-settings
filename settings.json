@@ -82,6 +82,8 @@
     "terminal.integrated.suggest.enabled": true,
     // Enable terminal link detection (Ctrl+Click on paths to open)
     "terminal.integrated.enableFileLinks": "on",
+    // Send keybindings to VS Code instead of terminal shell
+    "terminal.integrated.sendKeybindingsToShell": false,
     // ============================================
     // SEARCH
     // ============================================
