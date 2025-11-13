@@ -4,7 +4,7 @@
     // ============================================
     "editor.accessibilitySupport": "off",
     "editor.background": "#222222",
-    "editor.codeLensFontFamily": "'Ubuntu Mono', monospace",
+    "editor.codeLensFontFaily": "'Ubuntu Mono', monospace",
     "editor.fontFamily": "'Ubuntu Mono', monospace",
     "editor.fontSize": 18,
     "editor.minimap.enabled": false,
@@ -157,5 +157,6 @@
     "workbench.settings.applyToAllProfiles": [
         "cSpell.language"
     ],
-    "zenMode.restore": false
+    "zenMode.restore": false,
+    "workbench.editor.empty.hint": "hidden"
 }
