@@ -14,21 +14,21 @@
     {
         "key": "ctrl+w",
         "command": "editor.action.clipboardCutAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly || workbench.panel.chat.view.copilot.active"
     },
     
     // M-w - Copy region (Alt+W)
     {
         "key": "alt+w",
         "command": "editor.action.clipboardCopyAction",
-        "when": "editorTextFocus"
+        "when": "editorTextFocus || workbench.panel.chat.view.copilot.active "
     },
     
     // C-y - Yank (paste)
     {
         "key": "ctrl+y",
         "command": "editor.action.clipboardPasteAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly || workbench.panel.chat.view.copilot.active"
     },
     
     // Disable default Ctrl+W (close window) in editor
@@ -583,5 +583,23 @@
         "key": "ctrl+enter",
         "command": "-github.copilot.generate",
         "when": "editorTextFocus && github.copilot.activated && !commentEditorFocused"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.terminal.killEditor",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated || terminalEditorFocus && terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
     }
 ]
