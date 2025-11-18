@@ -20,8 +20,33 @@
                 "settings": {
                     "foreground": "#FFFFFF"
                 }
+            },
+            {
+                "scope": [
+                    "support.type.property-name",
+                    "meta.structure.dictionary.json string.quoted.double.json"
+                ],
+                "settings": {
+                    "foreground": "#FFFFFF"
+                }
+            },
+
+            // Added variable colorization (TextMate scopes)
+            {
+                "scope": [
+                    "variable",
+                    "variable.other",
+                    "variable.other.readwrite",
+                    "entity.name.variable",
+                    "support.variable",
+                    "variable.parameter"
+                ],
+                "settings": {
+                    // "foreground": "#FFD600" // change this color to taste
+                }
             }
-        ]
+        ],
+        
     },
     // ============================================
     // WORKBENCH APPEARANCE
@@ -33,27 +58,124 @@
     "workbench.statusBar.visible": true,
     "workbench.tree.indent": 16,
     "workbench.colorCustomizations": {
-        // Background colors for panels
-        "chat.background": "#222222", // Chat/Copilot panel background
-        "editor.background": "#222222", // Main editor background
-        "sideBar.background": "#222222", // File explorer/sidebar background
-        "terminal.background": "#222222", // Terminal panel background
-        // Editor line highlighting
-        "editor.lineHighlightBackground": "#222222", // Background of current line
-        "editor.lineHighlightBorder": "#6a6a6a", // Border around current line
-        // Selection colors (Emacs-style)
-        "editor.selectionBackground": "#214283", // Background when you select text (Emacs blue)
-        "editor.selectionHighlightBackground": "#34587d80", // Other occurrences of selected text (semi-transparent)
-        "list.activeSelectionBackground": "#214283", // Selected item in file explorer/lists
-        // Bracket matching
-        "editorBracketMatch.border": "#FF5700", // Border around matching brackets
-        // "editorBracketMatch.background": "#FF5700",   // Background behind matching brackets (disabled)
-        // Indentation guides
-        "editorIndentGuide.activeBackground1": "#ffffff", // Active indentation line
-        "editorIndentGuide.background1": "#5e5e5e", // Inactive indentation lines
-        "editor.guides.indentation": "false", // Toggle indentation guides
-        // Whitespace characters
-        "editorWhitespace.foreground": "#FF5700", // Color of visible spaces/tabs
+        // Backgrounds & surfaces
+        "editor.background": "#222222",
+        "sideBar.background": "#222222",
+        "sideBar.foreground": "#d0d0d0",
+        "activityBar.background": "#1b1b1b",
+        "activityBar.foreground": "#d0d0d0",
+        "activityBarBadge.background": "#FF5700",
+        "panel.background": "#1b1b1b",
+        "panel.border": "#2b2b2b",
+        "statusBar.background": "#151515",
+        "statusBar.foreground": "#cfcfcf",
+        "titleBar.activeBackground": "#151515",
+        "titleBar.activeForeground": "#eaeaea",
+
+        // Editor & text
+        "editor.foreground": "#e6e6e6",
+        "editorLineNumber.foreground": "#6a6a6a",
+        "editorLineNumber.activeForeground": "#ffffff",
+        "editorCursor.foreground": "#FFD600",
+        "editor.selectionBackground": "#214283",
+        "editor.selectionHighlightBackground": "#34587d80",
+        "editor.wordHighlightBackground": "#2b4b6a60",
+        "editor.wordHighlightStrongBackground": "#2b4b6a80",
+        "editor.findMatchBackground": "#ffd33d44",
+        "editor.findMatchHighlightBackground": "#ffd33d22",
+        "editor.lineHighlightBackground": "#222222",
+        "editor.lineHighlightBorder": "#6a6a6a",
+        "editorBracketMatch.border": "#ffffff",
+        "editorBracketMatch.background": "#333333",
+        "editorOverviewRuler.border": "#2b2b2b",
+        "editorError.foreground": "#ff6b6b",
+        "editorWarning.foreground": "#ffb86b",
+        "editorInfo.foreground": "#5ccfe6",
+
+        // Gutter & guides
+        "editorGutter.background": "#222222",
+        "editorGutter.addedBackground": "#73c990",
+        "editorGutter.modifiedBackground": "#ffd86b",
+        "editorGutter.deletedBackground": "#ff6b6b",
+        "editorIndentGuide.background1": "#3a3a3a",
+        "editorIndentGuide.activeBackground1": "#ffffff",
+
+        // Lists, trees, and explorer
+        "list.hoverBackground": "#1f2a3a",
+        "list.activeSelectionBackground": "#214283",
+        "list.activeSelectionForeground": "#ffffff",
+        "list.inactiveSelectionBackground": "#19314a",
+        "list.inactiveSelectionForeground": "#dcdcdc",
+        "list.focusBackground": "#214283",
+        "list.dropBackground": "#2b3b55",
+
+        // Buttons, inputs, quick pick
+        "button.background": "#2b6f47",
+        "button.foreground": "#ffffff",
+        "button.hoverBackground": "#3aa86a",
+        "input.background": "#1e1e1e",
+        "input.foreground": "#e6e6e6",
+        "input.placeholderForeground": "#8a8a8a",
+
+        // Badges and activity badges
+        "badge.background": "#FF5700",
+        "badge.foreground": "#111111",
+
+        // Peek / quick open / find
+        "peekViewEditor.background": "#1b1b1b",
+        "peekViewEditorGutter.background": "#1b1b1b",
+        "peekViewResult.background": "#151515",
+
+        // Debug & panel
+        "debugToolBar.background": "#161616",
+        "debugConsole.infoForeground": "#5ccfe6",
+
+        // Terminal
+        "terminal.background": "#0f0f0f",
+        "terminal.foreground": "#e6e6e6",
+        "terminalCursor.background": "#FFD600",
+        "terminalCursor.foreground": "#000000",
+        "terminal.ansiBlack": "#000000",
+        "terminal.ansiRed": "#ff6b6b",
+        "terminal.ansiGreen": "#73c990",
+        "terminal.ansiYellow": "#ffd86b",
+        "terminal.ansiBlue": "#5ccfe6",
+        "terminal.ansiMagenta": "#c678dd",
+        "terminal.ansiCyan": "#56b6c2",
+        "terminal.ansiWhite": "#e6e6e6",
+        "terminal.ansiBrightBlack": "#7f8c8d",
+        "terminal.ansiBrightRed": "#ff8787",
+        "terminal.ansiBrightGreen": "#9be6b4",
+        "terminal.ansiBrightYellow": "#ffe59e",
+        "terminal.ansiBrightBlue": "#9fe8ff",
+        "terminal.ansiBrightMagenta": "#e2baf6",
+        "terminal.ansiBrightCyan": "#9ff0f5",
+        "terminal.ansiBrightWhite": "#ffffff",
+
+        // Git decorations and scm
+        "gitDecoration.modifiedResourceForeground": "#ffd86b",
+        "gitDecoration.deletedResourceForeground": "#ff6b6b",
+        "gitDecoration.untrackedResourceForeground": "#73c990",
+
+        // Notifications
+        "notification.background": "#1b1b1b",
+        "notification.foreground": "#e6e6e6",
+        "notification.infoBackground": "#1b1b1b",
+
+        // Peek view and editors
+        "editor.rangeHighlightBackground": "#2b4b6a30",
+        "editor.snippetTabstopHighlightBackground": "#2b4b6a80",
+
+        // Workbench specific
+        "panelTitle.activeBorder": "#FF5700",
+
+        // Misc
+        "focusBorder": "#FF5700",
+        "contrastActiveBorder": "#444444",
+
+        // Keep your custom overrides from before
+        "chat.background": "#222222",
+        "editorWhitespace.foreground": "#FF5700"
     },
     // ============================================
     // WORKBENCH EDITOR
@@ -65,6 +187,7 @@
     "workbench.editor.openSideBySideDirection": "down",
     "workbench.editor.showTabIndex": true,
     "workbench.editor.showTabs": "single",
+    "editor.cursorStyle": "block",
     // ============================================
     // WINDOW
     // ============================================
@@ -158,5 +281,19 @@
         "cSpell.language"
     ],
     "zenMode.restore": false,
-    "workbench.editor.empty.hint": "hidden"
+    "workbench.editor.empty.hint": "hidden",
+    "terminal.integrated.stickyScroll.enabled": false,
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.startupEditor": "none",
+    // Add semantic token color customizations (for languages that use semantic tokens)
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        // "rules": {
+        //     "variable": "#FFFFFF",
+        //     "variable.readonly": "#9fe8ff",
+        //     "parameter": "#FF8700"
+        }
+    },
+    // Ensure semantic highlighting is enabled so semantic rules apply
+    "editor.semanticHighlighting.enabled": true
 }

@@ -330,7 +330,7 @@
         "when": "inSearchEditor"
     },
     
-    // Go to location in search editor
+    // // Go to location in search editor
     {
         "key": "ctrl+enter",
         "command": "editor.action.goToLocation",
@@ -356,12 +356,17 @@
     },
     
     // Go to definition (Shift+Alt+H)
+    
     {
         "key": "shift+alt+h",
         "command": "editor.action.revealDefinition",
         "when": "editorHasDefinitionProvider && editorTextFocus"
     },
-    
+    {
+        "key": "shift+alt+f",
+        "command": "editor.action.revealDefinition",
+        "when": "editorHasDefinitionProvider && editorTextFocus"
+    },
     // Disable default peek definition (Alt+F12)
     {
         "key": "alt+f12",
@@ -424,28 +429,28 @@
     // EDITOR SCROLLING & LINE MOVEMENT
     // ========================================
     
-    // Move line/selection up (Ctrl+Alt+Up)
+    // Move line/selection up (Shift+Ctrl+Alt+Up)
     {
-        "key": "ctrl+alt+up",
+        "key": "shift+ctrl+alt+up",
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
     },
     
-    // Move line/selection down (Ctrl+Alt+Down)
+    // Move line/selection down (Shift+Ctrl+Alt+Down)
     {
-        "key": "ctrl+alt+down",
+        "key": "shift+ctrl+alt+down",
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
     
-    // Jump cursor by page (Shift+Ctrl+Alt+Up/Down)
+    // Jump cursor by page (Ctrl+Alt+Up/Down)
     {
-        "key": "shift+ctrl+alt+up",
+        "key": "ctrl+alt+up",
         "command": "cursorPageUp",
         "when": "editorTextFocus"
     },
     {
-        "key": "shift+ctrl+alt+down",
+        "key": "ctrl+alt+down",
         "command": "cursorPageDown",
         "when": "editorTextFocus"
     },
