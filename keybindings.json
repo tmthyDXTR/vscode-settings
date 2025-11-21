@@ -30,7 +30,7 @@
         "command": "editor.action.clipboardPasteAction",
         "when": "editorTextFocus && !editorReadonly || workbench.panel.chat.view.copilot.active"
     },
-    
+
     // Disable default Ctrl+W (close window) in editor
     {
         "key": "ctrl+w",
@@ -292,7 +292,6 @@
                 "actions.findWithSelection",
                 "search.action.openEditor",
                 "workbench.action.moveEditorToBelowGroup",
-                "workbench.action.moveEditorToSecondGroup"
             ]
         }
     },
@@ -306,7 +305,6 @@
                 "actions.findWithSelection",
                 "search.action.openEditor",
                 "workbench.action.moveEditorToBelowGroup",
-                "workbench.action.moveEditorToSecondGroup"
             ]
         }
     },
@@ -606,5 +604,15 @@
     {
         "key": "ctrl+shift+w",
         "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus && !editorReadonly"
     }
 ]
