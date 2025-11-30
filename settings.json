@@ -6,54 +6,20 @@
     // "editor.background": "#222222",
     "editor.codeLensFontFaily": "'Ubuntu Mono', monospace",
     "editor.fontFamily": "'Ubuntu Mono', monospace",
+    // "editor.fontFamily": "'Modern DOS 8x16', monospace",
+    "editor.fontWeight": "500",
     "editor.fontSize": 18,
     "editor.renderLineHighlight": "all",
     "editor.stickyScroll.enabled": false,
     "editor.unicodeHighlight.nonBasicASCII": false,
     "editor.wordWrap": "on",
-    // "editor.tokenColorCustomizations": {
-    //     // "comments": "#A0A0A0"
-    //     "textMateRules": [
-    //         {
-    //             "scope": "string",
-    //             "settings": {
-    //                 "foreground": "#FFFFFF"
-    //             }
-    //         },
-    //         {
-    //             "scope": [
-    //                 "support.type.property-name",
-    //                 "meta.structure.dictionary.json string.quoted.double.json"
-    //             ],
-    //             "settings": {
-    //                 "foreground": "#FFFFFF"
-    //             }
-    //         },
-    //         // Added variable colorization (TextMate scopes)
-    //         {
-    //             "scope": [
-    //                 "variable",
-    //                 "variable.other",
-    //                 "variable.other.readwrite",
-    //                 "entity.name.variable",
-    //                 "support.variable",
-    //                 "variable.parameter"
-    //             ],
-    //             "settings": {
-    //                 // "foreground": "#FFD600" // change this color to taste
-    //             }
-    //         }
-    //     ],
-    // },
-    // ============================================
-    // WORKBENCH APPEARANCE
-    // ============================================
-    "breadcrumbs.enabled": false,
+    "editor.lineNumbers": "relative",
     "workbench.activityBar.location": "hidden",
     "workbench.layoutControl.enabled": false,
     "workbench.statusBar.visible": true,
     "workbench.tree.indent": 16,
-    // "workbench.preferredHighContrastLightColorTheme": "Default High Contrast",
+    "workbench.preferredLightColorTheme": "WinClassic",
+    "workbench.preferredHighContrastLightColorTheme": "Gray Matter Dark",
     // "workbench.colorCustomizations": {
     //     // Backgrounds & surfaces
     //     "editor.background": "#222222",
@@ -260,7 +226,27 @@
     "chat.tools.terminal.autoApprove": {
         "rm": true,
         "./noty": true,
-        "Move-Item": true
+        "Move-Item": true,
+        "npx": true,
+        "code": true,
+        "npm install": true,
+        "npm run compile": true,
+        "/^node -e \"console\\.log\\(require\\('\\./out/src/provider\\.js'\\)\\.DiredProvider\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^node -e \"require\\('fs'\\)\\.statSync\\('\\./out/src/extension\\.js'\\); console\\.log\\('compiled ok'\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^git -C \"c:\\\\Users\\\\Micha\\\\gamedev\\\\god\" log -5 --date=short --pretty=format:\"%h %ad %an - %s\" --name-status$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^git -C \"c:\\\\Users\\\\Micha\\\\gamedev\\\\god\\\\Assets\" log -10 --date=short --pretty=format:\"%h %ad %an - %s\" --name-status$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
     },
     // ============================================
     // GIT & SECURITY
@@ -270,9 +256,7 @@
     // ============================================
     // OTHER
     // ============================================
-    "workbench.settings.applyToAllProfiles": [
-        "cSpell.language"
-    ],
+    "workbench.settings.applyToAllProfiles": ["cSpell.language"],
     "zenMode.restore": false,
     "workbench.editor.empty.hint": "hidden",
     "terminal.integrated.stickyScroll.enabled": false,
@@ -280,7 +264,7 @@
     "workbench.startupEditor": "none",
     // Add semantic token color customizations (for languages that use semantic tokens)
     "editor.semanticTokenColorCustomizations": {
-        "enabled": true,
+        "enabled": true
         // "rules": {
         //     "variable": "#FFFFFF",
         //     "variable.readonly": "#9fe8ff",
@@ -293,5 +277,9 @@
     "[jsonc]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "workbench.colorTheme": "Github Light Theme - Gray",
+    "dired.ask_directory": false,
+    "dired.show_path_in_tab": true,
+    "debug.onTaskErrors": "debugAnyway",
+    "workbench.colorTheme": "WinClassic",
+    "breadcrumbs.enabled": false
 }

@@ -14,14 +14,14 @@
     {
         "key": "ctrl+w",
         "command": "editor.action.clipboardCutAction",
-        "when": "editorTextFocus && !editorReadonly || workbench.panel.chat.view.copilot.active"
+        "when": "!dired.open && editorTextFocus && !editorReadonly || workbench.panel.chat.view.copilot.active"
     },
 
     // M-w - Copy region (Alt+W)
     {
         "key": "alt+w",
         "command": "editor.action.clipboardCopyAction",
-        "when": "editorTextFocus || workbench.panel.chat.view.copilot.active "
+        "when": "!dired.open && (editorTextFocus || workbench.panel.chat.view.copilot.active)"
     },
 
     // C-y - Yank (paste)
@@ -69,7 +69,8 @@
     // C-x t - Create terminal editor
     {
         "key": "ctrl+x t",
-        "command": "workbench.action.createTerminalEditor"
+        "command": "workbench.action.createTerminalEditor",
+        "when": "!dired.open && editorTextFocus"
     },
 
     // C-x Shift+Ctrl+t - Create terminal editor at current file location
@@ -82,7 +83,8 @@
     // C-x C-p - Copy file path (mnemonic: "Control-x Control-path")
     {
         "key": "ctrl+x ctrl+p",
-        "command": "copyFilePath"
+        "command": "copyFilePath",
+        "when": "!dired.open"
     },
 
     // C-x b - Switch buffer (file)
@@ -111,18 +113,18 @@
     // EMACS-STYLE DIRED (FILE EXPLORER)
     // ========================================
 
-    // C-x d - Open dired (file explorer) - toggle sidebar
-    {
-        "key": "ctrl+x d",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
+    // // C-x d - Open dired (file explorer) - toggle sidebar
+    // {
+    //     "key": "ctrl+x d",
+    //     "command": "workbench.action.toggleSidebarVisibility"
+    // },
 
-    // C-x d - When sidebar opens, focus explorer
-    {
-        "key": "ctrl+x d",
-        "command": "workbench.view.explorer",
-        "when": "!sideBarVisible"
-    },
+    // // C-x d - When sidebar opens, focus explorer
+    // {
+    //     "key": "ctrl+x d",
+    //     "command": "workbench.view.explorer",
+    //     "when": "!sideBarVisible"
+    // },
 
     // n - Next line in file explorer (Emacs dired style)
     {
@@ -288,11 +290,7 @@
         "key": "alt+s",
         "command": "runCommands",
         "args": {
-            "commands": [
-                "actions.findWithSelection",
-                "search.action.openEditor",
-                "workbench.action.moveEditorToBelowGroup"
-            ]
+            "commands": ["search.action.openEditor"]
         }
     },
     // Open dired
@@ -306,11 +304,7 @@
         "key": "ctrl+shift+f",
         "command": "runCommands",
         "args": {
-            "commands": [
-                // "actions.findWithSelection",
-                "search.action.openEditor",
-                "workbench.action.moveEditorToBelowGroup"
-            ]
+            "commands": ["search.action.openEditor"]
         }
     },
     // Select search result in search viewlet
@@ -443,6 +437,13 @@
     // EDITOR SCROLLING & LINE MOVEMENT
     // ========================================
 
+    // Select all (Ctrl+A)
+    {
+        "key": "ctrl+x a",
+        "command": "editor.action.selectAll",
+        "when": "editorTextFocus"
+    },
+
     // Move line/selection up (Shift+Ctrl+Alt+Up)
     {
         "key": "shift+ctrl+alt+up",
@@ -543,10 +544,17 @@
         "command": "workbench.action.toggleSidebarVisibility"
     },
 
-    // Toggle breadcrumbs
+    // Increase Editor font size
     {
-        "key": "ctrl+b ctrl+c",
-        "command": "breadcrumbs.toggle"
+        "key": "ctrl+oem_plus",
+        "command": "editor.action.fontZoomIn",
+        "when": "editorTextFocus"
+    },
+    // Decrease Editor font size
+    {
+        "key": "ctrl+oem_minus",
+        "command": "editor.action.fontZoomOut",
+        "when": "editorTextFocus"
     },
 
     // Toggle minimap
@@ -637,5 +645,13 @@
         "key": "ctrl+shift+down",
         "command": "editor.action.insertCursorBelow",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "-workbench.action.zoomOut"
     }
 ]
